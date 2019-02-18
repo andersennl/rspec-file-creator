@@ -24,6 +24,18 @@ def create_file(path)
   `touch #{path}`
 end
 
+def write_to_file(path, class_name)
+  File.open(path, "a") do |file|
+    file << 'require "spec_helper"'
+    file << "\n\n"
+    file << "describe #{class_name} do"
+    file << "\n"
+    file << "  "
+    file << "\n"
+    file << "end"
+  end
+end
+
 print "File to create: "
 print spec_path(original_path)
 print "\n"
@@ -31,3 +43,4 @@ print "Class name: #{class_name(original_path)}"
 print "\n"
 
 create_file(spec_path(original_path))
+write_to_file(spec_path(original_path), class_name(original_path))

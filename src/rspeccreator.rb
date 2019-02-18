@@ -1,3 +1,5 @@
+#!/Users/andersennl/.rbenv/shims/ruby
+
 require "active_support/core_ext/string/conversions"
 require "pry-byebug"
 
